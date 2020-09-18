@@ -51,64 +51,83 @@ namespace BruteForce
         {
             while (!auth && !finished)
             {
-                var senhaTentativa = String.Format("{0}{1}{2}{3}{4}{5}",
+                try
+                {
+                    var senhaTentativa = String.Format("{0}{1}{2}{3}{4}{5}",
                     letras[contLetra[5]],
                     letras[contLetra[4]],
                     letras[contLetra[3]],
                     letras[contLetra[2]],
                     letras[contLetra[1]],
                     letras[contLetra[0]]);
-                var strArguments = String.Format("{0} {1}", "administrador", senhaTentativa);
+                    var strArguments = String.Format("{0} {1}", "administrador", senhaTentativa);
 
-                using (Process process = new Process())
-                {
-                    process.StartInfo.FileName = @"C:\Users\bruno\Desktop\auth equipe 2\Auth.exe";
-                    process.StartInfo.Arguments = strArguments;
-                    process.StartInfo.UseShellExecute = false;
-                    process.StartInfo.RedirectStandardOutput = true;
-                    process.Start();
-
-                    StreamReader reader = process.StandardOutput;
-                    string output = reader.ReadToEnd();
-
-                    process.WaitForExit();
-
-                    // Console.WriteLine("Tentativa: " + senhaTentativa + " --> Saída: " + output);
-
-                    var validacao = output.Replace("\r\n", "").Equals("Login ou senha incorretos!");
-
-                    if (!validacao)
+                    using (Process process = new Process())
                     {
-                        Console.WriteLine("ACHOU!" + validacao);
-                        auth = true;
-                        senhaFinal = senhaTentativa;
-                    }
-                    else
-                    {
-                        for (var op = 0; op < quantidadeContLetras; op++)
+                        process.StartInfo.FileName = @"C:\Users\bruno\Desktop\auth equipe 2\Auth.exe";
+                        process.StartInfo.Arguments = strArguments;
+                        process.StartInfo.UseShellExecute = false;
+                        process.StartInfo.RedirectStandardOutput = true;
+                        process.Start();
+
+                        StreamReader reader = process.StandardOutput;
+                        string output = reader.ReadToEnd();
+
+                        process.WaitForExit();
+
+                        // Console.WriteLine("Tentativa: " + senhaTentativa + " --> Saída: " + output);
+
+                        var validacao = output.Replace("\r\n", "").Equals("Login ou senha incorretos!");
+
+                        if (!validacao)
                         {
-                            if (op == 0)
+                            Console.WriteLine("ACHOU!" + validacao);
+                            auth = true;
+                            senhaFinal = senhaTentativa;
+                        }
+                        else
+                        {
+                            for (var op = 0; op < quantidadeContLetras; op++)
                             {
-                                contLetra[op]++;
-                            }
-
-                            if (contLetra[op] + 1 > quantidadeLetras)
-                            {
-                                if (op != 5)
+                                if (op == 0)
                                 {
-                                    contLetra[op + 1]++;
-                                    contLetra[op] = 0;
+                                    contLetra[op]++;
                                 }
-                            }
 
-                            if (contLetra[4] == quantidadeLetras && contLetra[5] == quantidadeLetras)
-                            {
-                                Console.WriteLine("FINISHED");
-                                finished = true;
+                                if (contLetra[op] + 1 > quantidadeLetras)
+                                {
+                                    if (op != 5)
+                                    {
+                                        contLetra[op + 1]++;
+                                        contLetra[op] = 0;
+                                    }
+                                } else if (op == quantidadeContLetras)
+                                {
+                                    if (contLetra[4] == quantidadeLetras && contLetra[5] == quantidadeLetras)
+                                    {
+                                        Console.WriteLine("FINISHED");
+                                        finished = true;
+                                    }
+                                }
+                                else 
+                                {
+                                    break;
+                                }
                             }
                         }
                     }
+                }
+                catch(Exception e)
+                {
+                    var tentativa = String.Format("Erro no cont letra: {0} - {1} - {2} - {3} - {4} - {5}",
+                    contLetra[5],
+                    contLetra[4],
+                    contLetra[3],
+                    contLetra[2],
+                    contLetra[1],
+                    contLetra[0]);
 
+                    Console.WriteLine("Hora do Erro: " + DateTime.Now +" ==> " + tentativa);
                 }
             }
         }
