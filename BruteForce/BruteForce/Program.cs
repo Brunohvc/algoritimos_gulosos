@@ -29,6 +29,7 @@ namespace BruteForce
             while (!auth && !finished)
             {
                 Thread t = new Thread(NovaThread);
+                t.Priority = ThreadPriority.Highest;
                 t.Start();
             }
             Console.WriteLine("Fim: " + DateTime.Now);
