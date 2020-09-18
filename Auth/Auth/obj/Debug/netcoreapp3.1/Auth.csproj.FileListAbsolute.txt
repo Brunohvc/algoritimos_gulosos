@@ -1,0 +1,13 @@
+C:\Users\bruno\source\repos\Auth\Auth\bin\Debug\netcoreapp3.1\Auth.exe
+C:\Users\bruno\source\repos\Auth\Auth\bin\Debug\netcoreapp3.1\Auth.deps.json
+C:\Users\bruno\source\repos\Auth\Auth\bin\Debug\netcoreapp3.1\Auth.runtimeconfig.json
+C:\Users\bruno\source\repos\Auth\Auth\bin\Debug\netcoreapp3.1\Auth.runtimeconfig.dev.json
+C:\Users\bruno\source\repos\Auth\Auth\bin\Debug\netcoreapp3.1\Auth.dll
+C:\Users\bruno\source\repos\Auth\Auth\bin\Debug\netcoreapp3.1\Auth.pdb
+C:\Users\bruno\source\repos\Auth\Auth\obj\Debug\netcoreapp3.1\Auth.csprojAssemblyReference.cache
+C:\Users\bruno\source\repos\Auth\Auth\obj\Debug\netcoreapp3.1\Auth.AssemblyInfoInputs.cache
+C:\Users\bruno\source\repos\Auth\Auth\obj\Debug\netcoreapp3.1\Auth.AssemblyInfo.cs
+C:\Users\bruno\source\repos\Auth\Auth\obj\Debug\netcoreapp3.1\Auth.csproj.CoreCompileInputs.cache
+C:\Users\bruno\source\repos\Auth\Auth\obj\Debug\netcoreapp3.1\Auth.dll
+C:\Users\bruno\source\repos\Auth\Auth\obj\Debug\netcoreapp3.1\Auth.pdb
+C:\Users\bruno\source\repos\Auth\Auth\obj\Debug\netcoreapp3.1\Auth.genruntimeconfig.cache

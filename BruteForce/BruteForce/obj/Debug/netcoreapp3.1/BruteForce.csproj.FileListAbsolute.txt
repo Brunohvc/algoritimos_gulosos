@@ -1,0 +1,13 @@
+C:\Users\bruno\source\repos\BruteForce\BruteForce\bin\Debug\netcoreapp3.1\BruteForce.exe
+C:\Users\bruno\source\repos\BruteForce\BruteForce\bin\Debug\netcoreapp3.1\BruteForce.deps.json
+C:\Users\bruno\source\repos\BruteForce\BruteForce\bin\Debug\netcoreapp3.1\BruteForce.runtimeconfig.json
+C:\Users\bruno\source\repos\BruteForce\BruteForce\bin\Debug\netcoreapp3.1\BruteForce.runtimeconfig.dev.json
+C:\Users\bruno\source\repos\BruteForce\BruteForce\bin\Debug\netcoreapp3.1\BruteForce.dll
+C:\Users\bruno\source\repos\BruteForce\BruteForce\bin\Debug\netcoreapp3.1\BruteForce.pdb
+C:\Users\bruno\source\repos\BruteForce\BruteForce\obj\Debug\netcoreapp3.1\BruteForce.csprojAssemblyReference.cache
+C:\Users\bruno\source\repos\BruteForce\BruteForce\obj\Debug\netcoreapp3.1\BruteForce.AssemblyInfoInputs.cache
+C:\Users\bruno\source\repos\BruteForce\BruteForce\obj\Debug\netcoreapp3.1\BruteForce.AssemblyInfo.cs
+C:\Users\bruno\source\repos\BruteForce\BruteForce\obj\Debug\netcoreapp3.1\BruteForce.csproj.CoreCompileInputs.cache
+C:\Users\bruno\source\repos\BruteForce\BruteForce\obj\Debug\netcoreapp3.1\BruteForce.dll
+C:\Users\bruno\source\repos\BruteForce\BruteForce\obj\Debug\netcoreapp3.1\BruteForce.pdb
+C:\Users\bruno\source\repos\BruteForce\BruteForce\obj\Debug\netcoreapp3.1\BruteForce.genruntimeconfig.cache
