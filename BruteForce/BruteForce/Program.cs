@@ -14,6 +14,7 @@ namespace BruteForce
         public static string senhaFinal = "";
         public static int quantidadeLetras = 0;
         public static int quantidadeContLetras = 0;
+        public static int tentativas = 0;
         static void Main(string[] args)
         {
             contLetra[0] = 0;
@@ -25,12 +26,18 @@ namespace BruteForce
             quantidadeLetras = letras.Length;
             quantidadeContLetras = contLetra.Length;
 
+            int cont = 0;
+
             Console.WriteLine("Inicio: "+ DateTime.Now);
             while (!auth && !finished)
             {
-                Thread t = new Thread(NovaThread);
-                t.Priority = ThreadPriority.Highest;
-                t.Start();
+                if (cont < 100)
+                {
+                    cont++;
+                    Thread t = new Thread(NovaThread);
+                    t.Priority = ThreadPriority.Highest;
+                    t.Start();
+                }
             }
             Console.WriteLine("Fim: " + DateTime.Now);
 
@@ -61,10 +68,15 @@ namespace BruteForce
                     letras[contLetra[1]],
                     letras[contLetra[0]]);
                     var strArguments = String.Format("{0} {1}", "administrador", senhaTentativa);
+                    tentativas++;
+                    if(tentativas % 5000 == 0)
+                    {
+                        Console.WriteLine(DateTime.Now + " - Tentativa: " + tentativas + " ==> " + senhaTentativa);
+                    }
 
                     using (Process process = new Process())
                     {
-                        process.StartInfo.FileName = @"C:\Users\bruno\Desktop\auth equipe 2\Auth.exe";
+                        process.StartInfo.FileName = @"C:\Users\bruno\Projetos\GitHub\algoritimos_gulosos\Auth\Auth\bin\Debug\netcoreapp3.1\Auth.exe";
                         process.StartInfo.Arguments = strArguments;
                         process.StartInfo.UseShellExecute = false;
                         process.StartInfo.RedirectStandardOutput = true;
